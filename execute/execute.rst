@@ -24,6 +24,7 @@ As discussed in the :doc:`Setting up the tool <../setup/setup>` section, the Dat
 
 .. index::
 	single: Opening the tool
+	single: Running the tool; Opening the tool
 
 Opening the tool
 ================
@@ -47,7 +48,8 @@ To open the Data Sync tool in ArcGIS Pro, open the **Tools** menu bar and click 
    \newpage
 
 .. index::
-	single: Initial set-up
+	single: Set-up
+	single: Running the tool; Initial set-up
 
 Initial set-up
 ==============
@@ -87,6 +89,7 @@ structure is correct, the list of user profiles will appear in the drop-down lis
 
 .. index::
 	single: Loading a profile
+	single: Running the tool; Loading a profile
 
 Loading a profile
 =================

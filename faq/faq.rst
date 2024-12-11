@@ -1,6 +1,5 @@
 .. index::
 	single: FAQ
-	see: Frequently asked questions; FAQ
 
 **************************
 Frequently Asked Questions

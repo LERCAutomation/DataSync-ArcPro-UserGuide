@@ -21,8 +21,8 @@ The Data Sync tool presents a simple user interface (:numref:`figUI`) to assist 
 .. _figUI:
 
 .. figure:: figures/UserInterface.png
-	:align: center
 	:scale: 80
+	:align: center
 
 	The Data Sync tool interface
 
@@ -42,6 +42,11 @@ As well as checking for inserted, deleted and edited features the comparison sto
 * **Error** - where the unique feature ID is null or blank.
 * **Duplicate** - where the unique feature ID is used by two or more features.
 * **Orphan** - where the unique feature ID is not in a related 'master' data table.
+
+
+.. raw:: latex
+
+   \newpage
 
 .. Note::
 	If the results of the comparison are not as expected the user can re-edit the local copy and re-run the comparison as required.

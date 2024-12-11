@@ -5,12 +5,15 @@ Setting up the tool
 Before the Data Sync tool will function, it needs to be installed and configured. It is recommended that the configuration is carried out first, although the steps are interchangeable. 
 
 .. index::
-	single: Configuring the tool
+	single: Configuration
 
 Configuring the tool
 ====================
 
 There are two configuration files used by the tool. They must be in the same folder.
+
+.. index::
+	single: Configuration; Tool configuration file
 
 Tool configuration file
 -----------------------
@@ -28,6 +31,9 @@ HelpURL
 
 .. caution:: 
 	The name of this configuration file must be 'DataSync.xml'. The tool will not load if the file is not found.
+
+.. index::
+	single: Configuration; User configuration files
 
 User configuration profiles
 ---------------------------
@@ -133,6 +139,9 @@ Installing the tool in ArcGIS Pro is straightforward. There are two ways it can 
 	Before installing the tool you will need to install another ArcGIS Pro add-in 'DataToolbar'. This add-in with simply create a new 'Tools' toolbar onto which the Data Sync tool and other Data tools will be added once installed. To install the toolbar follow the instructions below using the DataToolbar add-in.
 
 
+.. index::
+	single: Installation; via Windows Explorer
+
 Installation through Windows Explorer
 -------------------------------------
 
@@ -172,6 +181,9 @@ Once it is installed, it will appear in the Add-In Manager and on the 'Tools' me
 
    \newpage
 
+.. index::
+	single: Installation; within ArcGIS Pro
+
 Installation from within ArcGIS Pro
 -----------------------------------
 
@@ -194,6 +206,7 @@ If the Data Sync tool is not shown, use the **Options** tab to add the folder wh
 .. _figAddInOptions:
 
 .. figure:: figures/AddInOptions.png
+	:scale: 80
 	:align: center
 
 	The 'Options' tab in the ArcGIS Pro Add-In Manager
@@ -214,4 +227,3 @@ After restarting ArcGIS Pro the tool will show in the Add-In Manager (:numref:`f
 
 .. note::
 	The 'Tools' menu bar will only appear once the DataToolbar add-in has also been installed.
-
