@@ -114,6 +114,10 @@ load any further (:numref:`figLaunchWarning`).
 	Example warning message displayed for any XML structural issues
 
 
+.. raw:: latex
+
+   \newpage
+
 Provided that the selected XML profile is otherwise correct, the **Sync** tab will display 
 (:numref:`figDisplayForm`).
 
@@ -196,6 +200,7 @@ To perform a detailed comparison between the local layer and remote table click 
 .. _figCompareButton:
 
 .. figure:: figures/CompareButton.png
+	:scale: 80
 	:align: center
 
 	Compare button to perform comparison between local layer and remote table
@@ -208,6 +213,7 @@ Once the comparison has finished the results will appear in the ``Result Summary
 .. _figResultSummary:
 
 .. figure:: figures/ResultSummaryExample.png
+	:scale: 80
 	:align: center
 
 	Example of summary of comparison results
@@ -234,6 +240,7 @@ Click on a row to view a list of all of the features for that result type (:numr
 .. _figResultDetails:
 
 .. figure:: figures/ResultDetailsExample.png
+	:scale: 80
 	:align: center
 
 	Example of details for a result type
@@ -248,13 +255,17 @@ Double-click on a row to zoom to the location for that feature in the active map
 	Double-clicking on a ``Deleted`` feature will zoom to the location of the feature in the remote table.
 
 
+.. raw:: latex
+
+   \newpage
+
 At this point if any updates to the local layer are required these can be applied by editing the local layer as normal.
 
 .. caution::
 	It is important that the comparison is re-run, by clicking the **Compare** button again, before proceeding to ensure that a copy of the local layer is reloaded to the remote database.
 
 
-Finally, select whether the log file should be overwritten, and whether the log file should be opened upon completion (:numref:`figLogFileOptions`). Now the form is set up to run the extract.
+Finally, select whether the log file should be overwritten, and whether the log file should be opened upon completion (:numref:`figLogFileOptions`). Now the form is set up to run the synchronisation.
 
 .. _figLogFileOptions:
 
@@ -263,6 +274,10 @@ Finally, select whether the log file should be overwritten, and whether the log 
 
 	Select the log file options
 
+
+.. raw:: latex
+
+   \newpage
 
 .. index::
 	single: Using the form; Running the synchronisation

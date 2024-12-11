@@ -86,7 +86,7 @@ Related community links:
 Acknowledgements
 ================
 
-The DataExtractor tool was developed with funding from:
+The DataSync tool was developed with funding from:
 
 * Greenspace Information for Greater London CIC
 

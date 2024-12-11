@@ -31,7 +31,6 @@ Contents
 
    preface/preface
    introduction/introduction
-   anatomy/anatomy
    setup/setup
    execute/execute
    FAQs <faq/faq>

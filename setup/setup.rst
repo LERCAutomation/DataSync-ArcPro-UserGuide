@@ -47,7 +47,7 @@ Once editing has been completed and the edits have been saved, it is recommended
 .. note::
 	It is recommended that the configuration file is kept in a central (network) location, so that all users use the same configuration.
 
-Details on the required attributes in this file are given below. This version of the configuration details is valid for the ArcGIS Pro version of the Data Selector tool.
+Details on the required attributes in this file are given below. This version of the configuration details is valid for the ArcGIS Pro version of the Data Sync tool.
 
 LogFilePath
 	The existing file location where log files will be saved with output messages.

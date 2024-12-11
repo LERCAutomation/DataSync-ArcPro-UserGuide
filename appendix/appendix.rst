@@ -12,19 +12,23 @@ Change Log
 ==========
 
 **1.0.1**
-(28Nov2024)
+(28th Nov 2024)
 
-    * :guilabel:`New` Add new refresh table counts button
-    * :guilabel:`Improved` Adjust list columns width to size of contents
-    * :guilabel:`Improved` Display all areas with 2 decimal places
-    * :guilabel:`Fixed` Disable profile load button during processing
-    * :guilabel:`Fixed` Reduce detail list height to stop vertical scroll bars appearing
+    * :guilabel:`New` - Add new refresh table counts button
+    * :guilabel:`Improved` - Adjust list columns width to size of contents
+    * :guilabel:`Improved` - Display all areas with 2 decimal places
+    * :guilabel:`Fixed` - Disable profile load button during processing
+    * :guilabel:`Fixed` - Reduce detail list height to stop vertical scroll bars appearing
 
 **1.0.0**
-(21Nov2024)
+(21st Nov 2024)
 
     * Initial version
 
+
+.. raw:: latex
+
+   \newpage
 
 .. index::
     single: Appendix; XML files
