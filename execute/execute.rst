@@ -155,6 +155,7 @@ If the local layer specified in the XML profile is not present in the active map
    \newpage
 
 .. index::
+	single: Using the form
 	single: Using the form; Reviewing the table counts
 
 Reviewing the table counts

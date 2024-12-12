@@ -3,6 +3,7 @@ Appendix
 ********
 
 .. index::
+    single: Appendix
     single: Appendix; Change Log
     single: Change Log
 
@@ -32,6 +33,7 @@ Change Log
 
 .. index::
     single: Appendix; XML files
+    single: XML files
     single: XML files; Example Tool XML file
 
 .. _example_xml:

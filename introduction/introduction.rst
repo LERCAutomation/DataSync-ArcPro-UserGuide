@@ -71,6 +71,7 @@ Once the user is satisfied that the differences between the local and remote cop
    \newpage
 
 .. index::
+	single: Tool
 	single: Tool; Components
 
 The Data Sync tool
