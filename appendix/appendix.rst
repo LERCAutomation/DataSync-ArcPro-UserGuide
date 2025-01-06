@@ -12,6 +12,13 @@ Appendix
 Change Log
 ==========
 
+**1.0.2**
+(2nd Jan 2025)
+    * :guilabel:`Improved` - Enable different table/view to be added to map from table used for sync
+    * :guilabel:`Changed` - Rename XML node RemoteTable to RemoteTableUpand add new XML node RemoteTableDown
+    * :guilabel:`Fixed` - Ensure XML profiles are not duplicated
+    * :guilabel:`Fixed` - Extra error handling adding remote layer to map during compare process
+
 **1.0.1**
 (28th Nov 2024)
 
