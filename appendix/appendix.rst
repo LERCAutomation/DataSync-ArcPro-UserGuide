@@ -12,8 +12,15 @@ Appendix
 Change Log
 ==========
 
+**1.0.3**
+(14th Jan 2025)
+
+    * :guilabel:`Changed` - Checkboxes styles now match ArcGIS Pro style
+    * :guilabel:`Changed` - Standardised shared functions
+
 **1.0.2**
 (2nd Jan 2025)
+
     * :guilabel:`Improved` - Enable different table/view to be added to map from table used for sync
     * :guilabel:`Changed` - Rename XML node RemoteTable to RemoteTableUpand add new XML node RemoteTableDown
     * :guilabel:`Fixed` - Ensure XML profiles are not duplicated
