@@ -12,6 +12,10 @@ Appendix
 Change Log
 ==========
 
+**1.0.4**
+(14th Feb 2025)
+    * :guilabel:`Fixed` - Replace hard-coded values with variables
+
 **1.0.3**
 (14th Jan 2025)
 
