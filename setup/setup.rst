@@ -58,8 +58,23 @@ Details on the required attributes in this file are given below. This version of
 LogFilePath
 	The existing file location where log files will be saved with output messages.
 
-SDEFile
-	The location of the SDE file that specifies which SQL Server database to connect to.
+DbConnectionString
+	The connection string for ADO connection (to allow stored procedures to be run with parameters).
+
+DbTimeoutSeconds
+	The timeout (seconds) for the maximum number of seconds that the stored procedures are allowed to run. If you are experiencing timeout errors while running the tool, increase this number. The default is 60 seconds
+
+SDEFilePath
+	The existing file location where the SDE file will be found/saved.
+
+SDEFileName
+	The name of the SDE file that specifies which SQL Server database to connect to. Leave blank to use the userid.
+
+DbInstance
+	The SQL Server database instance to connect to. Leave blank if an SDE file name is specified above.
+
+DbName
+	The name of the SQL Server database to connect to. Leave blank if an SDE file name is specified above.
 
 DatabaseSchema
 	The schema used in the SQL Server database.
@@ -79,14 +94,29 @@ LocalLayer
 LocalClause
 	The local layer selection where clause (if required).
 
-RemoteTable
-	The name of the remote table in SQL Server containing the features.
+RemoteTableUp
+	The name of the remote table in SQL Server containing the remote features to upload to.
 
-RemoteClause
-	The remote table selection where clause (if required).
+RemoteTableDown
+	The name of the remote table/view in SQL Server containing the remote features to download from.
 
 RemoteLayer
 	The name of the layer in GIS displaying the remote features from SQL Server.
+
+RemoteQuery
+	The SQL statement that defines the select query to be issued to the database.
+
+RemoteOIDs
+	The fields from the query that will generate a dynamic, unique row identifier.
+
+RemoteShapeType
+	The shape type of the query layer.
+
+RemoteSRID
+	The spatial reference identifier (SRID) value of the remote query layer.
+
+RemoteSpatialReference
+	The coordinate system that will be used by the output query layer.
 
 KeyColumn
 	The name of the key column in the local layer and remote table.

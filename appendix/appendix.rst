@@ -12,18 +12,35 @@ Appendix
 Change Log
 ==========
 
+**1.0.6**
+(14Aug2025)
+    * :guilabel:`Improved` - Enable display of both local and remote table checks
+    * :guilabel:`Changed` - Zoom to local/remote features based on presence of keys
+
+**1.0.5**
+(06Jun2025)
+    * :guilabel:`Improved` - Create user-specific connection file if generic SDE file not used
+    * :guilabel:`Improved` - Upload layers to user's schema in SQL Server if generic SDE file not used
+    * :guilabel:`Changed` - Now compiled for ArcGIS Pro 3.4 onwards
+    * :guilabel:`Changed` - New config variables: DbConnectionString, DbTimeoutSeconds, SDEFilePath, SDEFileName, DbInstance, DbName
+    * :guilabel:`Changed` - New config variables: RemoteQuery, RemoteOIDs, RemoteShapeType, RemoteSRID, RemoteSpatialReference
+    * :guilabel:`Changed` - Removed config variable: SDEFile
+    * :guilabel:`Changed` - Execute stored procedures using ADO.Net
+    * :guilabel:`Changed` - Create a query layer for viewing the remote table
+    * :guilabel:`Fixed` - Fix bug if layer field alias' are null
+
 **1.0.4**
-(14th Feb 2025)
+(14Feb2025)
     * :guilabel:`Fixed` - Replace hard-coded values with variables
 
 **1.0.3**
-(14th Jan 2025)
+(14Jan2025)
 
     * :guilabel:`Changed` - Checkboxes styles now match ArcGIS Pro style
     * :guilabel:`Changed` - Standardised shared functions
 
 **1.0.2**
-(2nd Jan 2025)
+(2Jan2025)
 
     * :guilabel:`Improved` - Enable different table/view to be added to map from table used for sync
     * :guilabel:`Changed` - Rename XML node RemoteTable to RemoteTableUpand add new XML node RemoteTableDown
@@ -31,7 +48,7 @@ Change Log
     * :guilabel:`Fixed` - Extra error handling adding remote layer to map during compare process
 
 **1.0.1**
-(28th Nov 2024)
+(28Nov2024)
 
     * :guilabel:`New` - Add new refresh table counts button
     * :guilabel:`Improved` - Adjust list columns width to size of contents
@@ -40,7 +57,7 @@ Change Log
     * :guilabel:`Fixed` - Reduce detail list height to stop vertical scroll bars appearing
 
 **1.0.0**
-(21st Nov 2024)
+(21Nov2024)
 
     * Initial version
 
@@ -147,10 +164,40 @@ ensure the system is configured to their requirements.
         <value>D:\Data Tools\DataSync\Logfiles</value>
       </LogFilePath>
 
-      <!-- The location of the SDE file that specifies which SQL Server database to connect to. -->
-      <SDEFile>
-        <value>D:\Data Tools\DataSync\Config\OpenSpace.sde</value>
-      </SDEFile>
+      <!-- The connection string for ADO connection (to allow stored procedures to be run with parameters) -->
+      <DbConnectionString>
+    	<value>Data Source=SQLSERVER2017;Initial Catalog=OpenSpace;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;</value>
+      </DbConnectionString>
+    
+      <!-- The timeout (seconds) for the maximum number of seconds that the stored procedures are allowed to run. -->
+      <!-- If you are experiencing timeout errors while running the tool, increase this number -->
+      <!-- Default is 60 seconds -->
+      <DbTimeoutSeconds>
+      	<value>300</value>
+      </DbTimeoutSeconds>
+    
+      <!-- The existing file location where the SDE file will be found/saved. -->
+      <SDEFilePath>
+    	<value>D:\Data Tools\DataSync\Config</value>
+      </SDEFilePath>
+    
+      <!-- The name of the SDE file that specifies which SQL Server database to connect to.
+           Leave blank to use the userid. -->
+      <SDEFileName>
+    	<value>OpenSpace.sde</value>
+      </SDEFileName>
+    
+      <!-- The SQL Server database instance to connect to.
+           Leave blank if SDE file name specified above. -->
+      <DbInstance>
+    	<value>SQLSERVER2017</value>
+      </DbInstance>
+    
+      <!-- The name of the SQL Server database to connect to.
+           Leave blank if SDE file name specified above. -->
+      <DbName>
+    	<value>OpenSpace</value>
+      </DbName>
 
       <!-- The schema used in the SQL Server database. -->
       <DatabaseSchema>
@@ -177,25 +224,45 @@ ensure the system is configured to their requirements.
         <value>OpenSpace_Sites</value>
       </LocalLayer>
 
-      <!-- The local layer selection where clause (if required). -->
-      <LocalClause>
-        <value></value>
-      </LocalClause>
-
-      <!-- The name of the remote table in SQL Server containing the features. -->
-      <RemoteTable>
-        <value>OpenSpace_Sites</value>
-      </RemoteTable>
-
-      <!-- The remote table selection where clause (if required). -->
-      <RemoteClause>
-        <value>Deleted = 0</value>
-      </RemoteClause>
+      <!-- The name of the remote table in SQL Server containing the remote features to upload to. -->
+      <RemoteTableUp>
+            <value>OpenSpace_Sites</value>
+      </RemoteTableUp>
+    
+      <!-- The name of the remote table in SQL Server containing the remote features to download from. -->
+      <RemoteTableDown>
+    	<value>Sites_GIS</value>
+      </RemoteTableDown>
 
       <!-- The name of the layer in GIS displaying the remote features from SQL Server. -->
       <RemoteLayer>
         <value>OpenSpace_Sites_Remote</value>
       </RemoteLayer>
+
+      <!-- The SQL statement that defines the select query to be issued to the database. -->
+      <RemoteQuery>
+    	<value>SELECT OBJECTID, SiteID, dbo.AFGetSiteName(SiteID) AS SiteName, ROUND(AreaHa, 4) AS AreaHa, FLOOR(Easting) AS Easting, FLOOR(Northing) AS Northing, LTRIM(GridRef) AS GridRef, Shape.STNumGeometries() AS Parts, CAST(LTRIM(CAST(LastModifiedDate AS char(50))) AS DateTime) AS LastModifiedDate, LTRIM(LastModifiedUser) AS LastModifiedUser, Shape FROM dbo.SiteBoundaries WHERE (Deleted = 0)</value>
+      </RemoteQuery>
+    
+      <!-- The fields from the query that will generate a dynamic, unique row identifier. -->
+      <RemoteOIDs>
+    	<value>OBJECTID</value>
+      </RemoteOIDs>
+    
+      <!-- The shape type of the query layer. -->
+      <RemoteShapeType>
+    	<value>POLYGON</value>
+      </RemoteShapeType>
+    
+      <!-- The spatial reference identifier (SRID) value of the remote query layer. -->
+      <RemoteSRID>
+    	<value>27700</value>
+      </RemoteSRID>
+    
+      <!-- The coordinate system that will be used by the output query layer. -->
+      <RemoteSpatialReference>
+    	<value>British_National_Grid</value>
+      </RemoteSpatialReference>
 
       <!-- The name of the key column in the local layer and remote table. -->
       <KeyColumn>
